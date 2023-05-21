@@ -1,17 +1,12 @@
 package com.epam.collections.queue;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class PriorityQueueCreator {
     public PriorityQueue<String> createPriorityQueue(List<String> firstList, List<String> secondList) {
-        PriorityQueue<String> stringQueue = new PriorityQueue<>();
+        PriorityQueue<String> stringQueue = new PriorityQueue<>(Collections.reverseOrder());
         secondList.addAll(firstList);
-        Iterator<String> iterable = secondList.iterator();
-        while (iterable.hasNext()) {
-            stringQueue.add(iterable.next());
-        }
+        stringQueue.addAll(secondList);
         return stringQueue;
     }
 }
